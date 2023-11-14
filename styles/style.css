@@ -1,43 +1,45 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: 'IBM Plex Mono', sans-serif;
   background-color: var(--background-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  background-position: center;
 }
 
 /* header */
 
 .header {
+  margin: 20px;
   display: grid;
-  background-image: url(../images/cover-image-dark.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  padding: 20px;
-}
-
-.header__theme-menu {
+  block-size: 100vh;
   position: relative;
 }
+
 
 .header__theme-menu-list {
   display: flex;
   justify-content: center;
-  gap: 36px;
+  gap: 10px;
   color: var(--decorated-zone-color);
   text-align: center;
-  font-family: 'IBM Plex Mono';
+  font-family: 'IBM Plex Mono',monospace, Arial;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1;
 }
 
 .header__text {
-  color: var(--header-title-color);
+  margin: 160px 0 0 -20px;
   text-shadow: 4px 4px 0px var(--text-shadow);
-  font-family: 'IBM Plex Mono';
-  font-size: 157px;
+}
+.title{
+  color: var(--header-title-color);
+  font-family: 'IBM Plex Mono',monospace, Arial;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;
@@ -46,13 +48,13 @@
 .header__title {
   background: var(--text-background-color);
   max-inline-size: 491px;
-  height: 71px;
   justify-self: end;
+  align-self: start;
 }
 
 .header__title-text {
   color: var(--text-color-des);
-  font-family: 'IBM Plex Mono', serif;
+  font-family: 'IBM Plex Mono',monospace, Arial;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -60,12 +62,27 @@
 }
 
 .header__theme-menu-button {
-  background-color: rgba(0, 0, 0, 0);
-  border: 0;
+  padding: 2px 13px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  text-transform: lowercase;
+  appearance: none;
+  
+}
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--text-header-hover);
+}
+.header__theme-menu-button:focus {
+  outline: none;
+}
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--decorated-zone-color);
 }
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--decorated-zone-color);
+  pointer-events: none;
 }
 
 /* decoration */
@@ -111,21 +128,22 @@
   top: 8px;
   background-color: var(--decorated-zone-color);
   border-radius: 50%;
-  filter: drop-shadow(0px 0px 4px var(--decorated-zone-color));
+  filter: box-shadow(0px 0px 4px var(--decorated-zone-color));
 }
 
 /* main */
 .main {
-  padding: 60px 20px 60px;
-  font-family: 'IBM Plex Mono', sans-serif;
+  display: grid;
+  gap: 80px;
+  padding: 60px 20px;
+  font-family: 'IBM Plex Mono',monospace, Arial;
 }
 
 /* section */
 .section__main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 315px 650px;
   gap: 20px;
-  padding-bottom: 80px;
 }
 
 .section__main_title {
@@ -134,6 +152,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
+  max-inline-size: 315px;
 }
 
 .section__main_articles {
@@ -151,11 +170,14 @@
   line-height: 23.4px;
   /* 130% */
 }
+.little{
+  font-weight: 400;
+}
 
 .section__main_subtitle-description {
-  padding-top: 10px;
+  padding-block-start: 10px;
   color: var(--text-color);
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex Mono',monospace,Arial;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -175,21 +197,31 @@
 .section__main_subtitle-link {
   text-decoration: none;
   font-style: normal;
-  text-shadow: 1px 1px 0px var(--text-link-color);
+  text-shadow: 2px 2px 0px var(--text-link-color);
+}
+.section__main_subtitle-link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+.section__main_subtitle-link:focus {
+  outline: none;
+}
+.section__main_subtitle-link:focus-visible {
+  outline: 1px solid var(--text-color);
 }
 
 /* section-column */
 .section__main-column {
-  padding-bottom: 80px;
   display: grid;
   gap: 20px;
+}
+.section__main_articles-column{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* section-img */
-.section__main-img {
-  display: grid;
-  gap: 20px;
-}
+
 
 .section__main_img-title {
   background-color: var(--text-background-color);
@@ -198,15 +230,18 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px;
+  grid-area: section__main_img-title;
 }
 
 .section__main_articles-img {
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .section__main-img {
+  display: grid;
   gap: 20px;
   grid-template-areas:
     "section__main_img-title section__main_img-title section__main_img-title"
@@ -215,9 +250,7 @@
     "tape street street"
 }
 
-.section__main_img-title {
-  grid-area: section__main_img-title;
-}
+
 
 .sunset {
   grid-area: sunset;
@@ -241,62 +274,34 @@
 
 /* footer */
 .footer {
-  margin: 0 20px 20px;
+  margin: 20px;
   display: grid;
   position: relative;
-  min-block-size: 100vh;
+  block-size: 100vh;
   justify-content: center;
   align-content: center;
 }
 
 .footer-title {
-  color: var(--header-title-color);
   text-shadow: 2px 2px 0px var(--text-shadow);
-  font-family: IBM Plex Mono;
-  font-size: 157px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 82.5%;
 }
 
-/* hover */
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--text-header-hover);
-  cursor: pointer;
-}
-
-.section__main_subtitle-link:hover {
-  border-bottom: 1px solid var(--text-color);
-}
-
-/* focus */
-.header__theme-menu-button:focus {
-  outline: none;
-}
-
-.section__main_subtitle-link:focus {
-  outline: none;
-}
-
-/* focus-visible */
-.header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--decorated-zone-color);
-}
-
-.section__main_subtitle-link:focus-visible {
-  outline: 1px solid var(--text-color);
-}
 
 /* 768 */
 @media (width <=768px) {
   .header__theme-menu-list {
     flex-direction: column;
     align-items: flex-end;
-    padding-top: 173px;
+    padding-block-start: 173px;
+    gap: 13px;
   }
 
   .header__text {
-    font-size: 120px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin: 15px 0 0 -20px ;
+  }
+  .header__title{
+    max-inline-size: 364px;
   }
 
   .section__main {
@@ -304,7 +309,10 @@
   }
 
   .section__main_title {
-    width: 236px;
+    max-inline-size: 236px;
+  }
+  .section__main_articles-column{
+    grid-template-columns: none;    
   }
 
   .footer-title {
@@ -315,36 +323,41 @@
 /* 365 */
 @media (width <=375px) {
   .header {
-    padding: 10px;
+    margin: 10px;
+    max-block-size: 650px;
+  }
+  .header__text{
+    margin: 0;
   }
 
   .header__theme-menu-list {
-    padding-top: 66.5px;
+    padding-block-start: 66.5px;
+    padding-block-end: 10px;
+    gap: 13px;
   }
-
-  .header__text {
-    font-size: 116px;
+  .main{
+    padding: 40px 10px;
+    gap: 50px;
   }
-
-  .header__title {
-    height: 117px;
-  }
-
   .section__main {
     display: flex;
     flex-direction: column;
   }
 
   .section__main_title {
-    width: 100%;
+    max-width: none;
   }
 
   .section__main-img {
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
-
-  .footer-title {
-    font-size: 116px;
+  .title{
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  .footer{
+    margin: 10px;
+    max-block-size: 647px;
   }
 }

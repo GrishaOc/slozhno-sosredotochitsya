@@ -9,5 +9,5 @@
   --decorated-zone-color: #FF0070;
   --text-color-des: #000028;
   --text-link-color: #FF0070;
-  --text-header-hover: #ff007050;
+  --text-header-hover: rgba(255, 0, 112, 0.40);
 }
