@@ -1,13 +1,16 @@
 :root {
-  --header-title-color: #DB00FF;
+  --header-title-color: #db00ff;
   --background-color: #000028;
-  --text-background-color: #FF0070;
-  --text-title-color: #FF0070;
-  --text-subtitle-color: #FF0070;
-  --text-color: #F1B2CE;
-  --text-shadow: #FF0070;
-  --decorated-zone-color: #FF0070;
+  --text-background-color: #ff0070;
+  --text-title-color: #ff0070;
+  --text-subtitle-color: #ff0070;
+  --text-color: #f1b2ce;
+  --text-shadow: #ff0070;
+  --decorated-zone-color: #ff0070;
   --text-color-des: #000028;
-  --text-link-color: #FF0070;
-  --text-header-hover: rgba(255, 0, 112, 0.40);
+  --text-link-color: #ff0070;
+  --text-header-hover: rgba(255, 0, 112, 0.4);
+  --background-phone: url(../images/cover-image-dark.png);
+  --rec-block: block;
+  --text-font: "IBM Plex Mono", Courier, monospace;
 }
