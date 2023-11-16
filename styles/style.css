@@ -95,6 +95,7 @@
 /* decoration */
 
 .header__decoration {
+  font-family: var(--text-font);
   margin-block-start: 20px;
   display: var(--rec-block);
   position: absolute;
@@ -312,6 +313,7 @@
 
   .header__text {
     margin: 175px 0 165px -20px;
+    text-shadow: 4px 4px 0px var(--text-background-color);
   }
 
   .header__title {
@@ -331,13 +333,9 @@
   }
 
   .footer-title {
-    font-size: 120px;
+    text-shadow: 2px 2px 0px var(--text-background-color);
   }
 
-  .title {
-    text-shadow: 4px 4px 0px var(--text-background-color);
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
 }
 
 /* 365 */
